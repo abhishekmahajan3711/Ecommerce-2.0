@@ -5,13 +5,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Environment variables
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
 # IDE and editor files
 .vscode/
 .idea/
@@ -22,13 +15,6 @@ yarn-error.log*
 .project
 .classpath
 
-# Build and dist files
-dist/
-build/
-out/
-*.min.js
-*.min.css
-
 # Logs
 logs/
 *.log
@@ -37,16 +23,10 @@ logs/
 Thumbs.db
 .DS_Store
 
-# Uploads folder (if containing user-uploaded files)
-uploads/
-
 # Cache
 .cache/
 .eslintcache
 
-# Misc
-.next/
-.nuxt/
-.nitro.json
-out/
-dist/
+# Package lock files (optional - comment out if you want to include them)
+# package-lock.json
+# yarn.lock
