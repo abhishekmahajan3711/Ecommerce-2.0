@@ -208,7 +208,7 @@ const Profile = () => {
     try {
       // Assumes you have a way to get the auth token, e.g. from Redux or localStorage
       const token = localStorage.getItem('token');
-      const res = await axios.post('http://localhost:5000/api/auth/send-verification-email', {}, {
+      const res = await axios.post('https://ecommerce-2-0-ijjf.onrender.com/api/auth/send-verification-email', {}, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setVerifMsg('A verification email has been sent. The link will expire in 30 minutes.');
@@ -277,7 +277,7 @@ const Profile = () => {
       setShowFirebaseOTPInput(false);
       // Optionally, update backend to mark phone as verified
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:5000/api/auth/verify-firebase-mobile', { phone: phoneInput }, {
+      await axios.post('https://ecommerce-2-0-ijjf.onrender.com/api/auth/verify-firebase-mobile', { phone: phoneInput }, {
         headers: { Authorization: `Bearer ${token}` }
       });
       window.location.reload();

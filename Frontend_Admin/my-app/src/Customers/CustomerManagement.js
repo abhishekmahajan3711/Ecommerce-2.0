@@ -41,7 +41,7 @@ const CustomerManagement = () => {
         ...(filters.isMobileVerified !== '' && { isMobileVerified: filters.isMobileVerified })
       });
 
-      const response = await fetch(`http://localhost:5000/api/customers?${queryParams}`, {
+      const response = await fetch(`https://ecommerce-2-0-ijjf.onrender.com/api/customers?${queryParams}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -68,7 +68,7 @@ const CustomerManagement = () => {
   const fetchStats = async () => {
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch('http://localhost:5000/api/customers/stats', {
+      const response = await fetch('https://ecommerce-2-0-ijjf.onrender.com/api/customers/stats', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -100,7 +100,7 @@ const CustomerManagement = () => {
   const handleStatusUpdate = async (customerId, field, value) => {
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch(`http://localhost:5000/api/customers/${customerId}/status`, {
+      const response = await fetch(`https://ecommerce-2-0-ijjf.onrender.com/api/customers/${customerId}/status`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -125,7 +125,7 @@ const CustomerManagement = () => {
     if (window.confirm('Are you sure you want to delete this customer? This action cannot be undone.')) {
       try {
         const token = localStorage.getItem('adminToken');
-        const response = await fetch(`http://localhost:5000/api/customers/${customerId}`, {
+        const response = await fetch(`https://ecommerce-2-0-ijjf.onrender.com/api/customers/${customerId}`, {
           method: 'DELETE',
           headers: {
             'Authorization': `Bearer ${token}`

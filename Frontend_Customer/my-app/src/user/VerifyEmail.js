@@ -14,7 +14,7 @@ const VerifyEmail = () => {
       setMessage('No verification token provided.');
       return;
     }
-    axios.get(`http://localhost:5000/api/auth/verify-email?token=${token}`)
+    axios.get(`https://ecommerce-2-0-ijjf.onrender.com/api/auth/verify-email?token=${token}`)
       .then(res => {
         setStatus('success');
         setMessage('Your email has been verified!');

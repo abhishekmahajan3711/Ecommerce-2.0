@@ -61,7 +61,7 @@ const AdminProfile = () => {
 
     try {
       const token = localStorage.getItem('adminToken');
-      await axios.put('http://localhost:5000/api/admin/password', {
+      await axios.put('https://ecommerce-2-0-ijjf.onrender.com/api/admin/password', {
         currentPassword: passwordForm.currentPassword,
         newPassword: passwordForm.newPassword
       }, {

@@ -44,7 +44,7 @@ const FilterPage = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/products/categories');
+        const res = await axios.get('https://ecommerce-2-0-ijjf.onrender.com/api/products/categories');
         setCategories(res.data.data || []);
       } catch (err) {
         console.error('Error fetching categories:', err);
@@ -53,7 +53,7 @@ const FilterPage = () => {
 
     const fetchBrands = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/products/brands');
+        const res = await axios.get('https://ecommerce-2-0-ijjf.onrender.com/api/products/brands');
         setBrands(res.data.data || []);
       } catch (err) {
         console.error('Error fetching brands:', err);
@@ -68,7 +68,7 @@ const FilterPage = () => {
     const fetchProducts = async () => {
       setLoading(true);
       try {
-        let url = 'http://localhost:5000/api/products?';
+        let url = 'https://ecommerce-2-0-ijjf.onrender.com/api/products?';
         const params = [];
         
         if (searchQuery) params.push(`search=${encodeURIComponent(searchQuery)}`);
@@ -210,7 +210,7 @@ const FilterPage = () => {
   // Helper to get the correct image URL
   const getImageUrl = (img) => {
     if (!img) return 'https://via.placeholder.com/300x300?text=No+Image';
-    if (img.startsWith('/uploads/')) return `http://localhost:5000${img}`;
+    if (img.startsWith('/uploads/')) return `https://ecommerce-2-0-ijjf.onrender.com${img}`;
     return img;
   };
 

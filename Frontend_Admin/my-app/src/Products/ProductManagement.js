@@ -48,7 +48,7 @@ const ProductManagement = () => {
         }
       });
 
-      const response = await axios.get(`http://localhost:5000/api/admin/products?${params}`, {
+      const response = await axios.get(`https://ecommerce-2-0-ijjf.onrender.com/api/admin/products?${params}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -65,7 +65,7 @@ const ProductManagement = () => {
 
   const fetchCategories = useCallback(async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/products/categories');
+      const response = await axios.get('https://ecommerce-2-0-ijjf.onrender.com/api/products/categories');
       setCategories(response.data.data);
     } catch (error) {
       console.error('Error fetching categories:', error);
@@ -81,7 +81,7 @@ const ProductManagement = () => {
   // Helper to get the correct image URL
   const getImageUrl = (img) => {
     if (!img) return 'https://via.placeholder.com/300x300?text=No+Image';
-    if (img.startsWith('/uploads/')) return `http://localhost:5000${img}`;
+    if (img.startsWith('/uploads/')) return `https://ecommerce-2-0-ijjf.onrender.com${img}`;
     return img;
   };
 
@@ -124,7 +124,7 @@ const ProductManagement = () => {
     if (window.confirm('Are you sure you want to delete this product?')) {
       try {
         const token = localStorage.getItem('adminToken');
-        await axios.delete(`http://localhost:5000/api/admin/products/${productId}`, {
+        await axios.delete(`https://ecommerce-2-0-ijjf.onrender.com/api/admin/products/${productId}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         window.alert("Product Deleted");

@@ -127,7 +127,7 @@ const AddProduct = () => {
   const uploadImageFile = async (file, token) => {
     const formData = new FormData();
     formData.append('image', file);
-    const response = await axios.post('http://localhost:5000/api/admin/upload', formData, {
+    const response = await axios.post('https://ecommerce-2-0-ijjf.onrender.com/api/admin/upload', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
         Authorization: `Bearer ${token}`
@@ -166,7 +166,7 @@ const AddProduct = () => {
       }));
       // Now filter out empty strings from the final images array
       cleanedData.images = newImages.filter(img => img && img.trim() !== '');
-      await axios.post('http://localhost:5000/api/admin/products', cleanedData, {
+      await axios.post('https://ecommerce-2-0-ijjf.onrender.com/api/admin/products', cleanedData, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setMessage({ type: 'success', text: 'Product created successfully!' });
@@ -199,7 +199,7 @@ const AddProduct = () => {
 
   const fetchCategories = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/products/categories');
+      const response = await axios.get('https://ecommerce-2-0-ijjf.onrender.com/api/products/categories');
       setCategories(response.data.data);
     } catch (error) {
       console.error('Error fetching categories:', error);
@@ -453,7 +453,7 @@ const AddProduct = () => {
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">Main Image *</label>
                     {mainImagePreview && (
-                      <img src={mainImagePreview.startsWith('/uploads/') ? `http://localhost:5000${mainImagePreview}` : mainImagePreview} alt="Main" className="mb-2 rounded-xl w-32 h-32 object-cover border" />
+                      <img src={mainImagePreview.startsWith('/uploads/') ? `https://ecommerce-2-0-ijjf.onrender.com${mainImagePreview}` : mainImagePreview} alt="Main" className="mb-2 rounded-xl w-32 h-32 object-cover border" />
                     )}
                     <input
                       type="file"
@@ -467,7 +467,7 @@ const AddProduct = () => {
                     {formData.images.map((image, index) => (
                       <div key={index} className="flex items-center space-x-3 mb-3">
                         {additionalImagePreviews[index] && (
-                          <img src={additionalImagePreviews[index].startsWith('/uploads/') ? `http://localhost:5000${additionalImagePreviews[index]}` : additionalImagePreviews[index]} alt={`Additional ${index + 1}`} className="rounded-xl w-20 h-20 object-cover border" />
+                          <img src={additionalImagePreviews[index].startsWith('/uploads/') ? `https://ecommerce-2-0-ijjf.onrender.com${additionalImagePreviews[index]}` : additionalImagePreviews[index]} alt={`Additional ${index + 1}`} className="rounded-xl w-20 h-20 object-cover border" />
                         )}
                         <input
                           type="file"

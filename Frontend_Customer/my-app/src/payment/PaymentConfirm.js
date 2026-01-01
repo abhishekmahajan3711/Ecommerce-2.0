@@ -36,7 +36,7 @@ const PaymentConfirm = () => {
         phone: billingAddress.phone || user?.phone || ''
       };
 
-      const response = await axios.post('http://localhost:5000/api/orders', {
+      const response = await axios.post('https://ecommerce-2-0-ijjf.onrender.com/api/orders', {
         billingAddress: payloadBilling
       }, {
         headers: { Authorization: `Bearer ${token}` }
@@ -66,7 +66,7 @@ const PaymentConfirm = () => {
 
         <div className="flex items-center justify-center mb-6">
           <div className="p-4 bg-slate-50 rounded">
-            <img src={`http://localhost:5000/uploads/MyQRCode.jpeg`} alt="QR Code" className="block w-56 h-56 object-contain" />
+            <img src={`https://ecommerce-2-0-ijjf.onrender.com/uploads/MyQRCode.jpeg`} alt="QR Code" className="block w-56 h-56 object-contain" />
           </div>
         </div>
 

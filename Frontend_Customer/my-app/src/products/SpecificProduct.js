@@ -24,7 +24,7 @@ const SpecificProduct = () => {
       try {
         setLoading(true);
         setError(null);
-        const response = await axios.get(`http://localhost:5000/api/products/${id}`);
+        const response = await axios.get(`https://ecommerce-2-0-ijjf.onrender.com/api/products/${id}`);
         setProduct(response.data.data);
       } catch (err) {
         console.error('Error fetching product:', err);
@@ -116,7 +116,7 @@ const SpecificProduct = () => {
   // Helper to get the correct image URL
   const getImageUrl = (img) => {
     if (!img) return 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=600&fit=crop';
-    if (img.startsWith('/uploads/')) return `http://localhost:5000${img}`;
+    if (img.startsWith('/uploads/')) return `https://ecommerce-2-0-ijjf.onrender.com${img}`;
     return img;
   };
 

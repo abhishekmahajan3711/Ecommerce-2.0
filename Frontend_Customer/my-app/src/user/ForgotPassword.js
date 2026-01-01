@@ -16,7 +16,7 @@ const ForgotPassword = () => {
     setError('');
     setMessage('');
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/forgot-password', { email });
+      const res = await axios.post('https://ecommerce-2-0-ijjf.onrender.com/api/auth/forgot-password', { email });
       setMessage(res.data.message || 'OTP sent to your email.');
       setStep(2);
     } catch (err) {
@@ -32,7 +32,7 @@ const ForgotPassword = () => {
     setError('');
     setMessage('');
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/reset-password', { email, otp, newPassword });
+      const res = await axios.post('https://ecommerce-2-0-ijjf.onrender.com/api/auth/reset-password', { email, otp, newPassword });
       setMessage(res.data.message || 'Password reset successful!');
       setStep(3);
     } catch (err) {

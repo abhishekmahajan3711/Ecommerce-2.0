@@ -5,7 +5,7 @@ export const fetchCategories = createAsyncThunk(
   'category/fetchCategories',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await fetch('http://localhost:5000/api/categories');
+      const response = await fetch('https://ecommerce-2-0-ijjf.onrender.com/api/categories');
       const data = await response.json();
       
       if (data.success) {

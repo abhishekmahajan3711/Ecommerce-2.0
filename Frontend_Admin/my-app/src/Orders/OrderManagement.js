@@ -26,7 +26,7 @@ const OrderManagement = () => {
     try {
       setLoading(true);
       const token = localStorage.getItem('adminToken');
-      const res = await axios.get('http://localhost:5000/api/admin/orders', {
+      const res = await axios.get('https://ecommerce-2-0-ijjf.onrender.com/api/admin/orders', {
         headers: { Authorization: `Bearer ${token}` },
         params: { ...filters, ...params }
       });
@@ -58,7 +58,7 @@ const OrderManagement = () => {
       const token = localStorage.getItem('adminToken');
       const payload = {};
       payload[field] = value;
-      const res = await axios.put(`http://localhost:5000/api/admin/orders/${orderId}`, payload, {
+      const res = await axios.put(`https://ecommerce-2-0-ijjf.onrender.com/api/admin/orders/${orderId}`, payload, {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (res.data && res.data.success) {

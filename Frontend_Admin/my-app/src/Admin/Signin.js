@@ -30,7 +30,7 @@ const AdminSignin = () => {
     setError('');
 
     try {
-      const response = await axios.post('http://localhost:5000/api/admin/signin', formData);
+      const response = await axios.post('https://ecommerce-2-0-ijjf.onrender.com/api/admin/signin', formData);
       
       if (response.data.success) {
         // Store admin token and user data

@@ -13,7 +13,7 @@ const OrdersPage = () => {
   const fetchOrders = async () => {
     try {
       setLoading(true);
-      const res = await axios.get('http://localhost:5000/api/orders', {
+      const res = await axios.get('https://ecommerce-2-0-ijjf.onrender.com/api/orders', {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (res.data && res.data.success) setOrders(res.data.data || []);
@@ -33,7 +33,7 @@ const OrdersPage = () => {
     if (!window.confirm('Are you sure you want to cancel this order?')) return;
     try {
       setCancelling(prev => ({ ...prev, [orderId]: true }));
-      const res = await axios.patch(`http://localhost:5000/api/orders/${orderId}/cancel`, {}, {
+      const res = await axios.patch(`https://ecommerce-2-0-ijjf.onrender.com/api/orders/${orderId}/cancel`, {}, {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (res.data && res.data.success) {
@@ -70,7 +70,7 @@ const OrdersPage = () => {
     if (src.startsWith('http')) return src;
     if (src.startsWith('/')) return src;
     // assume path relative to backend uploads
-    return `http://localhost:5000${src.startsWith('/uploads') ? '' : '/uploads/'}${src}`;
+    return `https://ecommerce-2-0-ijjf.onrender.com${src.startsWith('/uploads') ? '' : '/uploads/'}${src}`;
   };
 
   return (

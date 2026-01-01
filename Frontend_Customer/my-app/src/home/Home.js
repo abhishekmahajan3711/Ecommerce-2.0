@@ -33,7 +33,7 @@ const Home = () => {
     const fetchFeaturedProducts = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:5000/api/products/featured');
+        const response = await fetch('https://ecommerce-2-0-ijjf.onrender.com/api/products/featured');
         const data = await response.json();
         
         if (data.success) {
@@ -103,7 +103,7 @@ const Home = () => {
   // Helper to get the correct image URL
   const getImageUrl = (img) => {
     if (!img) return 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=400&fit=crop';
-    if (img.startsWith('/uploads/')) return `http://localhost:5000${img}`;
+    if (img.startsWith('/uploads/')) return `https://ecommerce-2-0-ijjf.onrender.com${img}`;
     return img;
   };
 

@@ -5,7 +5,7 @@ export const submitContactQuery = createAsyncThunk(
   'contact/submitQuery',
   async (queryData, { rejectWithValue }) => {
     try {
-      const response = await fetch('http://localhost:5000/api/contact/submit', {
+      const response = await fetch('https://ecommerce-2-0-ijjf.onrender.com/api/contact/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ export const fetchUserQueries = createAsyncThunk(
   async (_, { rejectWithValue, getState }) => {
     try {
       const token = getState().auth.token;
-      const response = await fetch('http://localhost:5000/api/contact/user/queries', {
+      const response = await fetch('https://ecommerce-2-0-ijjf.onrender.com/api/contact/user/queries', {
         headers: {
           'Authorization': `Bearer ${token}`
         }

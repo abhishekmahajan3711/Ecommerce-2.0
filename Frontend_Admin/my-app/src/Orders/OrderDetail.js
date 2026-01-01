@@ -12,7 +12,7 @@ const OrderDetail = () => {
     const fetch = async () => {
       try {
         const token = localStorage.getItem('adminToken');
-        const res = await axios.get(`http://localhost:5000/api/admin/orders/${id}`, {
+        const res = await axios.get(`https://ecommerce-2-0-ijjf.onrender.com/api/admin/orders/${id}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         if (res.data && res.data.success) setOrder(res.data.data);

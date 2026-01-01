@@ -30,7 +30,7 @@ const ContactManagement = () => {
         ...filters
       });
 
-      const response = await fetch(`http://localhost:5000/api/contact/admin/all?${queryParams}`, {
+      const response = await fetch(`https://ecommerce-2-0-ijjf.onrender.com/api/contact/admin/all?${queryParams}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -53,7 +53,7 @@ const ContactManagement = () => {
   const fetchStats = async () => {
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch('http://localhost:5000/api/contact/admin/stats', {
+      const response = await fetch('https://ecommerce-2-0-ijjf.onrender.com/api/contact/admin/stats', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -71,7 +71,7 @@ const ContactManagement = () => {
   const updateContactStatus = async (id, status, priority, adminNotes) => {
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch(`http://localhost:5000/api/contact/admin/${id}`, {
+      const response = await fetch(`https://ecommerce-2-0-ijjf.onrender.com/api/contact/admin/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -98,7 +98,7 @@ const ContactManagement = () => {
 
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch(`http://localhost:5000/api/contact/admin/${id}`, {
+      const response = await fetch(`https://ecommerce-2-0-ijjf.onrender.com/api/contact/admin/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`

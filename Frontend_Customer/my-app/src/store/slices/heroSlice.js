@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const fetchHeroSection = createAsyncThunk('hero/fetchHeroSection', async (_, { rejectWithValue }) => {
   try {
-    const res = await axios.get('http://localhost:5000/api/products/hero');
+    const res = await axios.get('https://ecommerce-2-0-ijjf.onrender.com/api/products/hero');
     return res.data.data;
   } catch (err) {
     return rejectWithValue(err.response?.data?.message || 'Failed to fetch hero section');

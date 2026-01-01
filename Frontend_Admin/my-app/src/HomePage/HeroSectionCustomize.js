@@ -34,9 +34,9 @@ const HeroSectionCustomize = () => {
   const fetchHero = async () => {
     setLoading(true);
     try {
-      const res = await axios.get('http://localhost:5000/api/products/hero');
+      const res = await axios.get('https://ecommerce-2-0-ijjf.onrender.com/api/products/hero');
       setForm(res.data.data);
-      setImagePreview(res.data.data.image ? (res.data.data.image.startsWith('/uploads/') ? `http://localhost:5000${res.data.data.image}` : res.data.data.image) : '');
+      setImagePreview(res.data.data.image ? (res.data.data.image.startsWith('/uploads/') ? `https://ecommerce-2-0-ijjf.onrender.com${res.data.data.image}` : res.data.data.image) : '');
     } catch (err) {
       setError('Failed to fetch hero section');
     } finally {
@@ -56,7 +56,7 @@ const HeroSectionCustomize = () => {
     const token = localStorage.getItem('adminToken');
     const data = new FormData();
     data.append('image', imageFile);
-    const res = await axios.post('http://localhost:5000/api/admin/hero/upload', data, {
+    const res = await axios.post('https://ecommerce-2-0-ijjf.onrender.com/api/admin/hero/upload', data, {
       headers: {
         'Content-Type': 'multipart/form-data',
         Authorization: `Bearer ${token}`
@@ -88,7 +88,7 @@ const HeroSectionCustomize = () => {
     try {
       const imageUrl = await uploadImage();
       const token = localStorage.getItem('adminToken');
-      await axios.put('http://localhost:5000/api/admin/hero', {
+      await axios.put('https://ecommerce-2-0-ijjf.onrender.com/api/admin/hero', {
         ...form,
         image: imageUrl
       }, {

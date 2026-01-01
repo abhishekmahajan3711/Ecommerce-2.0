@@ -35,7 +35,7 @@ const AddCategory = ({ onClose, onSuccess }) => {
     const fetchCategories = async () => {
       try {
         setCategoriesLoading(true);
-        const response = await fetch('http://localhost:5000/api/products/categories');
+        const response = await fetch('https://ecommerce-2-0-ijjf.onrender.com/api/products/categories');
         const data = await response.json();
         
         if (data.success) {
@@ -85,7 +85,7 @@ const AddCategory = ({ onClose, onSuccess }) => {
 
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch('http://localhost:5000/api/categories/admin', {
+      const response = await fetch('https://ecommerce-2-0-ijjf.onrender.com/api/categories/admin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
